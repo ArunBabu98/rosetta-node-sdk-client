@@ -1,4 +1,4 @@
-# Rosetta.Version
+# RosettaNodeSdkClient.Version
 
 ## Properties
 

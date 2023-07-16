@@ -1,4 +1,4 @@
-# Rosetta.ConstructionPreprocessRequest
+# RosettaNodeSdkClient.ConstructionPreprocessRequest
 
 ## Properties
 

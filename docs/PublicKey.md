@@ -1,4 +1,4 @@
-# Rosetta.PublicKey
+# RosettaNodeSdkClient.PublicKey
 
 ## Properties
 

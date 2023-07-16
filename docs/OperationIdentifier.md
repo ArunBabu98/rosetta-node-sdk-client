@@ -1,4 +1,4 @@
-# Rosetta.OperationIdentifier
+# RosettaNodeSdkClient.OperationIdentifier
 
 ## Properties
 

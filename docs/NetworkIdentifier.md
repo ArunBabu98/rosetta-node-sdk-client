@@ -1,4 +1,4 @@
-# Rosetta.NetworkIdentifier
+# RosettaNodeSdkClient.NetworkIdentifier
 
 ## Properties
 

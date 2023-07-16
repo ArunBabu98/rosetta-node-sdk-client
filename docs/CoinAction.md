@@ -1,4 +1,4 @@
-# Rosetta.CoinAction
+# RosettaNodeSdkClient.CoinAction
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# Rosetta.Peer
+# RosettaNodeSdkClient.Peer
 
 ## Properties
 

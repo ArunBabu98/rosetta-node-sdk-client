@@ -1,4 +1,4 @@
-# Rosetta.AccountIdentifier
+# RosettaNodeSdkClient.AccountIdentifier
 
 ## Properties
 

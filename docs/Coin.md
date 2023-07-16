@@ -1,4 +1,4 @@
-# Rosetta.Coin
+# RosettaNodeSdkClient.Coin
 
 ## Properties
 

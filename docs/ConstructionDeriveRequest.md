@@ -1,4 +1,4 @@
-# Rosetta.ConstructionDeriveRequest
+# RosettaNodeSdkClient.ConstructionDeriveRequest
 
 ## Properties
 

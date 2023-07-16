@@ -1,4 +1,4 @@
-# Rosetta.Amount
+# RosettaNodeSdkClient.Amount
 
 ## Properties
 

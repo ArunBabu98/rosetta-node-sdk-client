@@ -1,4 +1,4 @@
-# Rosetta.ConstructionCombineResponse
+# RosettaNodeSdkClient.ConstructionCombineResponse
 
 ## Properties
 

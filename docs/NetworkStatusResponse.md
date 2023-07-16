@@ -1,4 +1,4 @@
-# Rosetta.NetworkStatusResponse
+# RosettaNodeSdkClient.NetworkStatusResponse
 
 ## Properties
 
@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **genesisBlockIdentifier** | [**BlockIdentifier**](BlockIdentifier.md) |  | 
 **oldestBlockIdentifier** | [**BlockIdentifier**](BlockIdentifier.md) |  | [optional] 
 **syncStatus** | [**SyncStatus**](SyncStatus.md) |  | [optional] 
-**peers** | [**[Peer]**](Peer.md) |  | 
+**peers** | [**[Peer]**](Peer.md) |  | [optional] 
 
 

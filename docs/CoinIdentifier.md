@@ -1,4 +1,4 @@
-# Rosetta.CoinIdentifier
+# RosettaNodeSdkClient.CoinIdentifier
 
 ## Properties
 

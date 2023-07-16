@@ -4,31 +4,34 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-
 var _BlockRequest = _interopRequireDefault(require("../model/BlockRequest"));
-
 var _BlockResponse = _interopRequireDefault(require("../model/BlockResponse"));
-
 var _BlockTransactionRequest = _interopRequireDefault(require("../model/BlockTransactionRequest"));
-
 var _BlockTransactionResponse = _interopRequireDefault(require("../model/BlockTransactionResponse"));
-
 var _Error = _interopRequireDefault(require("../model/Error"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); } /**
+                                                                                                                                                                                                                                                                                                                                                                                               * rosetta-node-sdk-client
+                                                                                                                                                                                                                                                                                                                                                                                               * Build Once. Integrate Your Blockchain Everywhere.
+                                                                                                                                                                                                                                                                                                                                                                                               *
+                                                                                                                                                                                                                                                                                                                                                                                               * The version of the OpenAPI document: 1.4.13
+                                                                                                                                                                                                                                                                                                                                                                                               * 
+                                                                                                                                                                                                                                                                                                                                                                                               *
+                                                                                                                                                                                                                                                                                                                                                                                               * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+                                                                                                                                                                                                                                                                                                                                                                                               * https://openapi-generator.tech
+                                                                                                                                                                                                                                                                                                                                                                                               * Do not edit the class manually.
+                                                                                                                                                                                                                                                                                                                                                                                               *
+                                                                                                                                                                                                                                                                                                                                                                                               */
 /**
 * Block service.
 * @module api/BlockApi
-* @version 1.4.1
+* @version 1.4.13
 */
 var BlockApi = /*#__PURE__*/function () {
   /**
@@ -40,9 +43,9 @@ var BlockApi = /*#__PURE__*/function () {
   */
   function BlockApi(apiClient) {
     _classCallCheck(this, BlockApi);
-
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
+
   /**
    * Callback function to receive the result of the block operation.
    * @callback module:api/BlockApi~blockCallback
@@ -58,17 +61,14 @@ var BlockApi = /*#__PURE__*/function () {
    * @param {module:api/BlockApi~blockCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/BlockResponse}
    */
-
-
   _createClass(BlockApi, [{
     key: "block",
     value: function block(blockRequest, callback) {
-      var postBody = blockRequest; // verify the required parameter 'blockRequest' is set
-
+      var postBody = blockRequest;
+      // verify the required parameter 'blockRequest' is set
       if (blockRequest === undefined || blockRequest === null) {
         throw new _Error["default"]("Missing the required parameter 'blockRequest' when calling block");
       }
-
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
@@ -79,6 +79,7 @@ var BlockApi = /*#__PURE__*/function () {
       var returnType = _BlockResponse["default"];
       return this.apiClient.callApi('/block', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
+
     /**
      * Callback function to receive the result of the blockTransaction operation.
      * @callback module:api/BlockApi~blockTransactionCallback
@@ -89,21 +90,19 @@ var BlockApi = /*#__PURE__*/function () {
 
     /**
      * Get a Block Transaction
-     * Get a transaction in a block by its Transaction Identifier. This endpoint should only be used when querying a node for a block does not return all transactions contained within it. All transactions returned by this endpoint must be appended to any transactions returned by the /block method by consumers of this data. Fetching a transaction by hash is considered an Explorer Method (which is classified under the Future Work section). Calling this endpoint requires reference to a BlockIdentifier because transaction parsing can change depending on which block contains the transaction. For example, in Bitcoin it is necessary to know which block contains a transaction to determine the destination of fee payments. Without specifying a block identifier, the node would have to infer which block to use (which could change during a re-org). Implementations that require fetching previous transactions to populate the response (ex: Previous UTXOs in Bitcoin) may find it useful to run a cache within the Rosetta server in the /data directory (on a path that does not conflict with the node).
+     * Get a transaction in a block by its Transaction Identifier. This endpoint should only be used when querying a node for a block does not return all transactions contained within it. All transactions returned by this endpoint must be appended to any transactions returned by the /block method by consumers of this data. Fetching a transaction by hash is considered an Explorer Method (which is classified under the Future Work section). This method can be used to let consumers to paginate results when the  block trasactions count is too big to be returned in a single BlockResponse. Calling this endpoint requires reference to a BlockIdentifier because transaction parsing can change depending on which block contains the transaction. For example, in Bitcoin it is necessary to know which block contains a transaction to determine the destination of fee payments. Without specifying a block identifier, the node would have to infer which block to use (which could change during a re-org). Implementations that require fetching previous transactions to populate the response (ex: Previous UTXOs in Bitcoin) may find it useful to run a cache within the Rosetta server in the /data directory (on a path that does not conflict with the node).
      * @param {module:model/BlockTransactionRequest} blockTransactionRequest 
      * @param {module:api/BlockApi~blockTransactionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BlockTransactionResponse}
      */
-
   }, {
     key: "blockTransaction",
     value: function blockTransaction(blockTransactionRequest, callback) {
-      var postBody = blockTransactionRequest; // verify the required parameter 'blockTransactionRequest' is set
-
+      var postBody = blockTransactionRequest;
+      // verify the required parameter 'blockTransactionRequest' is set
       if (blockTransactionRequest === undefined || blockTransactionRequest === null) {
         throw new _Error["default"]("Missing the required parameter 'blockTransactionRequest' when calling blockTransaction");
       }
-
       var pathParams = {};
       var queryParams = {};
       var headerParams = {};
@@ -115,8 +114,6 @@ var BlockApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/block/transaction', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);
-
   return BlockApi;
 }();
-
 exports["default"] = BlockApi;

@@ -1,4 +1,4 @@
-# Rosetta.MetadataRequest
+# RosettaNodeSdkClient.MetadataRequest
 
 ## Properties
 

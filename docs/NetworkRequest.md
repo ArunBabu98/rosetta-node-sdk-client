@@ -1,4 +1,4 @@
-# Rosetta.NetworkRequest
+# RosettaNodeSdkClient.NetworkRequest
 
 ## Properties
 

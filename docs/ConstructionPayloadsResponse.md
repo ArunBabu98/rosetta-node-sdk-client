@@ -1,4 +1,4 @@
-# Rosetta.ConstructionPayloadsResponse
+# RosettaNodeSdkClient.ConstructionPayloadsResponse
 
 ## Properties
 

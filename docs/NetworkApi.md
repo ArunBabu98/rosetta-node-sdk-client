@@ -1,4 +1,4 @@
-# Rosetta.NetworkApi
+# RosettaNodeSdkClient.NetworkApi
 
 All URIs are relative to *http://localhost*
 
@@ -21,10 +21,10 @@ This endpoint returns a list of NetworkIdentifiers that the Rosetta server suppo
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.NetworkApi();
-let metadataRequest = new Rosetta.MetadataRequest(); // MetadataRequest | 
+let apiInstance = new RosettaNodeSdkClient.NetworkApi();
+let metadataRequest = new RosettaNodeSdkClient.MetadataRequest(); // MetadataRequest | 
 apiInstance.networkList(metadataRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -66,10 +66,10 @@ This endpoint returns the version information and allowed network-specific types
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.NetworkApi();
-let networkRequest = new Rosetta.NetworkRequest(); // NetworkRequest | 
+let apiInstance = new RosettaNodeSdkClient.NetworkApi();
+let networkRequest = new RosettaNodeSdkClient.NetworkRequest(); // NetworkRequest | 
 apiInstance.networkOptions(networkRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -111,10 +111,10 @@ This endpoint returns the current status of the network requested. Any NetworkId
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.NetworkApi();
-let networkRequest = new Rosetta.NetworkRequest(); // NetworkRequest | 
+let apiInstance = new RosettaNodeSdkClient.NetworkApi();
+let networkRequest = new RosettaNodeSdkClient.NetworkRequest(); // NetworkRequest | 
 apiInstance.networkStatus(networkRequest, (error, data, response) => {
   if (error) {
     console.error(error);

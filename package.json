@@ -1,11 +1,11 @@
 {
-  "name": "rosetta-node-sdk-client",
-  "version": "1.4.1",
-  "description": "A_Standard_for_Blockchain_Interaction",
-  "license": "MIT",
+  "name": "rosetta_node_sdk_client",
+  "version": "1.4.13",
+  "description": "Build_Once__Integrate_Your_Blockchain_Everywhere_",
+  "license": "Apache 2.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm install && babel src -d dist",
+    "build": "babel src -d dist",
     "prepack": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
+    "rosetta": "^1.1.0",
     "superagent": "3.7.0"
   },
   "devDependencies": {
@@ -42,23 +43,5 @@
   },
   "files": [
     "dist"
-  ],
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DigiByte-Core/rosetta-node-sdk-client.git"
-  },
-  "keywords": [
-    "blockchain",
-    "node",
-    "sdk"
-  ],
-  "author": "Yoshi Jaeger",
-  "bugs": {
-    "url": "https://github.com/DigiByte-Core/rosetta-node-sdk-client/issues"
-  },
-  "homepage": "https://github.com/DigiByte-Core/rosetta-node-sdk-client#readme"
+  ]
 }

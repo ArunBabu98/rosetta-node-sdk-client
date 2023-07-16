@@ -1,4 +1,4 @@
-# Rosetta.ConstructionHashRequest
+# RosettaNodeSdkClient.ConstructionHashRequest
 
 ## Properties
 

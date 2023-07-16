@@ -1,4 +1,4 @@
-# Rosetta.MempoolApi
+# RosettaNodeSdkClient.MempoolApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,10 +20,10 @@ Get all Transaction Identifiers in the mempool
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.MempoolApi();
-let networkRequest = new Rosetta.NetworkRequest(); // NetworkRequest | 
+let apiInstance = new RosettaNodeSdkClient.MempoolApi();
+let networkRequest = new RosettaNodeSdkClient.NetworkRequest(); // NetworkRequest | 
 apiInstance.mempool(networkRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -65,10 +65,10 @@ Get a transaction in the mempool by its Transaction Identifier. This is a separa
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.MempoolApi();
-let mempoolTransactionRequest = new Rosetta.MempoolTransactionRequest(); // MempoolTransactionRequest | 
+let apiInstance = new RosettaNodeSdkClient.MempoolApi();
+let mempoolTransactionRequest = new RosettaNodeSdkClient.MempoolTransactionRequest(); // MempoolTransactionRequest | 
 apiInstance.mempoolTransaction(mempoolTransactionRequest, (error, data, response) => {
   if (error) {
     console.error(error);

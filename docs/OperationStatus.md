@@ -1,4 +1,4 @@
-# Rosetta.OperationStatus
+# RosettaNodeSdkClient.OperationStatus
 
 ## Properties
 

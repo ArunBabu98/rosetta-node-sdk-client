@@ -1,4 +1,4 @@
-# Rosetta.MempoolTransactionResponse
+# RosettaNodeSdkClient.MempoolTransactionResponse
 
 ## Properties
 

@@ -1,11 +1,11 @@
-# Rosetta.ConstructionApi
+# RosettaNodeSdkClient.ConstructionApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**constructionCombine**](ConstructionApi.md#constructionCombine) | **POST** /construction/combine | Create Network Transaction from Signatures
-[**constructionDerive**](ConstructionApi.md#constructionDerive) | **POST** /construction/derive | Derive an Address from a PublicKey
+[**constructionDerive**](ConstructionApi.md#constructionDerive) | **POST** /construction/derive | Derive an AccountIdentifier from a PublicKey
 [**constructionHash**](ConstructionApi.md#constructionHash) | **POST** /construction/hash | Get the Hash of a Signed Transaction
 [**constructionMetadata**](ConstructionApi.md#constructionMetadata) | **POST** /construction/metadata | Get Metadata for Transaction Construction
 [**constructionParse**](ConstructionApi.md#constructionParse) | **POST** /construction/parse | Parse a Transaction
@@ -26,10 +26,10 @@ Combine creates a network-specific transaction from an unsigned transaction and 
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionCombineRequest = new Rosetta.ConstructionCombineRequest(); // ConstructionCombineRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionCombineRequest = new RosettaNodeSdkClient.ConstructionCombineRequest(); // ConstructionCombineRequest | 
 apiInstance.constructionCombine(constructionCombineRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -64,17 +64,17 @@ No authorization required
 
 > ConstructionDeriveResponse constructionDerive(constructionDeriveRequest)
 
-Derive an Address from a PublicKey
+Derive an AccountIdentifier from a PublicKey
 
-Derive returns the network-specific address associated with a public key. Blockchains that require an on-chain action to create an account should not implement this method.
+Derive returns the AccountIdentifier associated with a public key. Blockchains that require an on-chain action to create an account should not implement this method.
 
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionDeriveRequest = new Rosetta.ConstructionDeriveRequest(); // ConstructionDeriveRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionDeriveRequest = new RosettaNodeSdkClient.ConstructionDeriveRequest(); // ConstructionDeriveRequest | 
 apiInstance.constructionDerive(constructionDeriveRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -116,10 +116,10 @@ TransactionHash returns the network-specific transaction hash for a signed trans
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionHashRequest = new Rosetta.ConstructionHashRequest(); // ConstructionHashRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionHashRequest = new RosettaNodeSdkClient.ConstructionHashRequest(); // ConstructionHashRequest | 
 apiInstance.constructionHash(constructionHashRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -156,15 +156,15 @@ No authorization required
 
 Get Metadata for Transaction Construction
 
-Get any information required to construct a transaction for a specific network. Metadata returned here could be a recent hash to use, an account sequence number, or even arbitrary chain state. The request used when calling this endpoint is often created by calling &#x60;/construction/preprocess&#x60; in an offline environment. It is important to clarify that this endpoint should not pre-construct any transactions for the client (this should happen in &#x60;/construction/payloads&#x60;). This endpoint is left purposely unstructured because of the wide scope of metadata that could be required.
+Get any information required to construct a transaction for a specific network. Metadata returned here could be a recent hash to use, an account sequence number, or even arbitrary chain state. The request used when calling this endpoint is created by calling &#x60;/construction/preprocess&#x60; in an offline environment. You should NEVER assume that the request sent to this endpoint will be created by the caller or populated with any custom parameters. This must occur in &#x60;/construction/preprocess&#x60;. It is important to clarify that this endpoint should not pre-construct any transactions for the client (this should happen in &#x60;/construction/payloads&#x60;). This endpoint is left purposely unstructured because of the wide scope of metadata that could be required.
 
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionMetadataRequest = new Rosetta.ConstructionMetadataRequest(); // ConstructionMetadataRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionMetadataRequest = new RosettaNodeSdkClient.ConstructionMetadataRequest(); // ConstructionMetadataRequest | 
 apiInstance.constructionMetadata(constructionMetadataRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -206,10 +206,10 @@ Parse is called on both unsigned and signed transactions to understand the inten
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionParseRequest = new Rosetta.ConstructionParseRequest(); // ConstructionParseRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionParseRequest = new RosettaNodeSdkClient.ConstructionParseRequest(); // ConstructionParseRequest | 
 apiInstance.constructionParse(constructionParseRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -246,15 +246,15 @@ No authorization required
 
 Generate an Unsigned Transaction and Signing Payloads
 
-Payloads is called with an array of operations and the response from &#x60;/construction/metadata&#x60;. It returns an unsigned transaction blob and a collection of payloads that must be signed by particular addresses using a certain SignatureType. The array of operations provided in transaction construction often times can not specify all \&quot;effects\&quot; of a transaction (consider invoked transactions in Ethereum). However, they can deterministically specify the \&quot;intent\&quot; of the transaction, which is sufficient for construction. For this reason, parsing the corresponding transaction in the Data API (when it lands on chain) will contain a superset of whatever operations were provided during construction.
+Payloads is called with an array of operations and the response from &#x60;/construction/metadata&#x60;. It returns an unsigned transaction blob and a collection of payloads that must be signed by particular AccountIdentifiers using a certain SignatureType. The array of operations provided in transaction construction often times can not specify all \&quot;effects\&quot; of a transaction (consider invoked transactions in Ethereum). However, they can deterministically specify the \&quot;intent\&quot; of the transaction, which is sufficient for construction. For this reason, parsing the corresponding transaction in the Data API (when it lands on chain) will contain a superset of whatever operations were provided during construction.
 
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionPayloadsRequest = new Rosetta.ConstructionPayloadsRequest(); // ConstructionPayloadsRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionPayloadsRequest = new RosettaNodeSdkClient.ConstructionPayloadsRequest(); // ConstructionPayloadsRequest | 
 apiInstance.constructionPayloads(constructionPayloadsRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -291,15 +291,15 @@ No authorization required
 
 Create a Request to Fetch Metadata
 
-Preprocess is called prior to &#x60;/construction/payloads&#x60; to construct a request for any metadata that is needed for transaction construction given (i.e. account nonce). The request returned from this method will be used by the caller (in a different execution environment) to call the &#x60;/construction/metadata&#x60; endpoint.
+Preprocess is called prior to &#x60;/construction/payloads&#x60; to construct a request for any metadata that is needed for transaction construction given (i.e. account nonce). The &#x60;options&#x60; object returned from this endpoint will be sent to the &#x60;/construction/metadata&#x60; endpoint UNMODIFIED by the caller (in an offline execution environment). If your Construction API implementation has configuration options, they MUST be specified in the &#x60;/construction/preprocess&#x60; request (in the &#x60;metadata&#x60; field).
 
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionPreprocessRequest = new Rosetta.ConstructionPreprocessRequest(); // ConstructionPreprocessRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionPreprocessRequest = new RosettaNodeSdkClient.ConstructionPreprocessRequest(); // ConstructionPreprocessRequest | 
 apiInstance.constructionPreprocess(constructionPreprocessRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -341,10 +341,10 @@ Submit a pre-signed transaction to the node. This call should not block on the t
 ### Example
 
 ```javascript
-import Rosetta from 'rosetta';
+import RosettaNodeSdkClient from 'rosetta_node_sdk_client';
 
-let apiInstance = new Rosetta.ConstructionApi();
-let constructionSubmitRequest = new Rosetta.ConstructionSubmitRequest(); // ConstructionSubmitRequest | 
+let apiInstance = new RosettaNodeSdkClient.ConstructionApi();
+let constructionSubmitRequest = new RosettaNodeSdkClient.ConstructionSubmitRequest(); // ConstructionSubmitRequest | 
 apiInstance.constructionSubmit(constructionSubmitRequest, (error, data, response) => {
   if (error) {
     console.error(error);

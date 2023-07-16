@@ -1,4 +1,4 @@
-# Rosetta.NetworkOptionsResponse
+# RosettaNodeSdkClient.NetworkOptionsResponse
 
 ## Properties
 

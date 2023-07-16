@@ -1,4 +1,4 @@
-# Rosetta.TransactionIdentifierResponse
+# RosettaNodeSdkClient.TransactionIdentifierResponse
 
 ## Properties
 

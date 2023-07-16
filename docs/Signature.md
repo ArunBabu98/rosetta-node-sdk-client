@@ -1,4 +1,4 @@
-# Rosetta.Signature
+# RosettaNodeSdkClient.Signature
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Rosetta.SubAccountIdentifier
+# RosettaNodeSdkClient.SubAccountIdentifier
 
 ## Properties
 

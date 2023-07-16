@@ -1,4 +1,4 @@
-# Rosetta.CoinChange
+# RosettaNodeSdkClient.CoinChange
 
 ## Properties
 

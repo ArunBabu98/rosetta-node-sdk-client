@@ -1,4 +1,4 @@
-# Rosetta.ConstructionParseRequest
+# RosettaNodeSdkClient.ConstructionParseRequest
 
 ## Properties
 

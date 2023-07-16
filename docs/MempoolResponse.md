@@ -1,4 +1,4 @@
-# Rosetta.MempoolResponse
+# RosettaNodeSdkClient.MempoolResponse
 
 ## Properties
 

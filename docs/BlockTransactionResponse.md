@@ -1,4 +1,4 @@
-# Rosetta.BlockTransactionResponse
+# RosettaNodeSdkClient.BlockTransactionResponse
 
 ## Properties
 

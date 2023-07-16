@@ -1,4 +1,4 @@
-# Rosetta.PartialBlockIdentifier
+# RosettaNodeSdkClient.PartialBlockIdentifier
 
 ## Properties
 

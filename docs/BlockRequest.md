@@ -1,4 +1,4 @@
-# Rosetta.BlockRequest
+# RosettaNodeSdkClient.BlockRequest
 
 ## Properties
 
